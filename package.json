@@ -11,6 +11,7 @@
     "express-ejs-layouts": "^2.4.0",
     "gulp": "^3.9.1",
     "gulp-less": "^4.0.0",
+    "method-override": "^2.3.10",
     "mongoose": "^5.0.15",
     "session": "^0.1.0"
   },
