@@ -15,6 +15,11 @@ We will create four pages home, edit, community canvas and myCanvas
 
 We will use three models and a music API
 
+Our schemas will be 
+Users- password, username/email
+Photos- img source, date, title, description
+Poems- body, date, title
+
 
 
 
