@@ -33,7 +33,7 @@ router.post('/', async (req, res, next) => {
 			foundUser.photos.push(newPhoto);
 			foundUser.save();
 			res.send(foundUser)
-			// res.redirect('/photos/')
+			res.redirect('/users/foundUser._id')
 		} else {
 			req.session.message = "You must be logged in 	to add a new photo. Please log in or 	create a new account"
 			res.send("You must be logged in to add a new 	photo. Please log in or create a new 	account")
