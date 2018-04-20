@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Edit</title>
+	<link rel="stylesheet" type="text/css" href="">
 </head>
 <body>
+	<header>
+		<h1>Edit MyCanvas</h1>
+		<nav>
+			<ul>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/users">Users Index</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<form action="/users/<%= user.id%>?_method=PUT" method="POST">
+			Name: <input type="text" name="name" value="<%= user.name%>">
+			Email: <input type="text" name="email" placeholder="email" value="<%= user.email%>">
+			Password: <input type="text" name="password" placeholder="password" value="<%=user.password%>">
+			<button type="submit" name="Edit">Update My Info</button>
+		</form>
+	</main>
 
 </body>
 </html>

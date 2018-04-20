@@ -19,7 +19,15 @@
 </header>
 <main>
 	<ul>
-		<% if(user.photos %>
+		<% if(user.photos != undefined) {%>
+		<% for (let i = 0; i < user.photos.length; i++) { -%><li><a href="/photos/<%=user.photos[i].id%>"><img src="<%= user.photos[i].url%>"></a></li>
+			
+		<% } -%>
+		<% } -%>
+		<li><a href="/photos/new">Add Photos</a></li>
+		<li><a href="/users/<%= user.id%>/edit">Edit user information</a><form action="/users/<%= user.id%>?_method=DELETE" method="POST">
+			<button>Delete</button>
+		</form></li>
 	</ul>
 </main>
 </body>

@@ -5,30 +5,33 @@
 </head>
 <body>
 	<header>
-		<h1>Photographs by <%= user.name%></h1>
+		<h1>Community Canvas</h1>
 		<nav>
 			<ul>
 				<li>
 					<a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
 				</li>
 				<li>
-					<a class="btn btn-primary btn-lg" href="/users/new" role="button"></a>
+					<a class="btn btn-primary btn-lg" href="/users/new" role="button">Create your Canvas</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
 	<main>
 		<ul>
-			<% if(user.photos != undefined) {%>
-			<% for (let i = 0; i < user.photos.length; i++) { -%>
+			
+			<% for (let i = 0; i < users.length; i++) { -%>
+			<a href="/users/<%=users[i].id%>"><%=users[i].username%></a>
 				
-			<% } -%>
-			<li>Name: <%=user.name%></li>
-			<li><a href="/photos/new">Add Photos</a></li>
-			<li><a href="/users/<%= user.id%>/edit">Edit MyCanvas</a>
-				<form action="/users/<%=user.id%>?_method=DELETE" method="POST">
-						<button>Delete <%=user.name%></button>
+			
+			
+			<li>
+				<form action="/users/<%=users[i].id%>?_method=DELETE" method="POST">
+					<a href="/users/<%= users[i].id%>/edit">Edit MyCanvas</a>
+						<button>Delete</button>
+
 				</form></li>
+				<% } -%>
 		</ul>
 	</main>
 </body>
