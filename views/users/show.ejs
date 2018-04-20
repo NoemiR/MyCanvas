@@ -5,19 +5,19 @@
 </head>
 <body>
 	<header>
-	<h1><%= user.name%> Canvas</h1>
+	<h1 class="text-center display-3"><%= user.username%> Canvas</h1>
 	<nav>
-		
-			
-				<a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
-		
-			
-				<a class="btn btn-primary btn-lg" href="/users/new" role="button">Users Index</a>
-		
-		
+	<ul class="list-inline-item">
+		<li class="list-inline-item">
+			<a class="btn btn-primary btn-sm" href="/" role="button">Home</a>
+		</li>
+		<li class="list-inline-item">
+			<a class="btn btn-primary btn-sm" href="/users/new" role="button">Users Index</a>
+		</li>
+	</ul>	
 	</nav>
-</header>
-<main>
+	</header>
+	<main>
 	<ul>
 		<% if(user.photos != undefined) {%>
 		<% for (let i = 0; i < user.photos.length; i++) { -%><li><a href="/photos/<%=user.photos[i].id%>"><img src="<%= user.photos[i].url%>"></a></li>
@@ -29,6 +29,6 @@
 			<button>Delete</button>
 		</form></li>
 	</ul>
-</main>
+	</main>
 </body>
 </html>

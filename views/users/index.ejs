@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<div class="p-3 mb-2 bg-secondary text-black">
+		<div class="text-center"> 
 	<header>
-		<h1>Community Canvas</h1>
+		<h1 class="text-center display-3">Community Canvas</h1>
 		<nav>
-			<ul>
-				<li>
+			<ul class="list-inline-item">
+				<li class="list-inline-item">
 					<a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
 				</li>
-				<li>
+				<li class="list-inline-item">
 					<a class="btn btn-primary btn-lg" href="/users/new" role="button">Create your Canvas</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
+	</div>
 	<main>
-		<ul>
+		<div class="text-center">
+		<ul class="list-group">
 			
 			<% for (let i = 0; i < users.length; i++) { -%>
-			<a href="/users/<%=users[i].id%>"><%=users[i].username%></a>
+			<li class="list-group-item list-group-item-light"><a href="/users/<%=users[i].id%>"><%=users[i].username%></a>
 				
+		</li>
 			
 			
-			<li>
-				<form action="/users/<%=users[i].id%>?_method=DELETE" method="POST">
-					<a href="/users/<%= users[i].id%>/edit">Edit MyCanvas</a>
-						<button>Delete</button>
+					<% } -%>
 
-				</form></li>
-				<% } -%>
 		</ul>
+	</div>
 	</main>
-</body>
-</html>
