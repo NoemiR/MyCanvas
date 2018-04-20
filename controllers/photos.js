@@ -9,8 +9,11 @@ const Poems = require('../models/poem');
 
 // ** new ** content route
 router.get('/new', (req, res, next) => {
-	res.render('photos/new.ejs')
+	res.render('photos/new.ejs', {
+		pageTitle: "Add a new photo"
+	})
 })
+
 
 router.post('/', (req, res, next) => {
 	// if the user is registered

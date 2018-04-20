@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override')
-// const expressLayouts =require('express-ejs-layouts')
+const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session')
 
 //run our
@@ -10,8 +10,8 @@ const session = require('express-session')
 require('./db/db')
 
 
-// app.set('view engine', 'ejs');
-// app.use(expressLayouts);
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
 
 
 app.use(session({
