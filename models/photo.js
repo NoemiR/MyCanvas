@@ -16,7 +16,8 @@ const photoSchema = mongoose.Schema({
 	},
 	dateAdded: {
 		type: Date
-	}
+	},
+	private: Boolean
 })
 
 module.exports = mongoose.model('Photos', photoSchema)

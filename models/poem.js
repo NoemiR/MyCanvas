@@ -13,7 +13,8 @@ const poemSchema = mongoose.Schema({
 	},
 	dateAdded: {
 		type: Date
-	}
+	}, 
+	private: Boolean
 })
 
 module.exports = mongoose.model('Poems', poemSchema)

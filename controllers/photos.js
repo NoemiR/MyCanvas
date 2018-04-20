@@ -12,6 +12,22 @@ router.get('/new', (req, res, next) => {
 	res.render('photos/new.ejs')
 })
 
+router.post('/', (req, res, next) => {
+	// if the user is registered
+	// find that user
+	// if photo
+	//push the photo into that person's photo array
+
+	// if poem
+	// push the poem into that person's poem array
+
+	try {
+		const 
+	} catch() {
+
+	}
+})
+
 // ** edit ** content route
 // router.get('/:id/edit', async (req, res, next) => {
 // 	try {
