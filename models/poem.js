@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const poemSchema = mongoose.Schema({
 	username: {
 		type: String,
-		required: true
+		// required: true
 	},
 	body: {
 		type: String
