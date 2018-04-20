@@ -1,9 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Add Content to myCanvas</title>
 </head>
 <body>
+
+	<h1>Add Content to myCanvas</h1>
+
+	<div class="container">
+		
+		<form action='/photos' method="POST">
+			<h2>Add a Photo</h2>
+			<div class="form-group">
+				<label>Image Source: </label>
+				<input type="text" name="url" class="form-control" id="exampleInputEmail" placeholder="Image URL" />
+			</div>
+			<div class="form-group">
+				<label>Image Title: </label>
+				<input type="text" name="title" class="form-control" id="exampleInputEmail" placeholder="Image Title" />
+			</div>
+			<div class="form-group">
+				<label>Image Description: </label>
+				<input type="text" name="description" class="form-control" id="exampleInputEmail" placeholder="Add a description of your photo"/>
+				<label>Make this photo private: </label>
+				<input type="checkbox" name="private">
+			</div>
+			<button type="Submit" class="btn btn-dark">Add Photo</button>
+		</form>
+
+
+		<form action='/poems' method="POST">
+			<h2>Add a Poem</h2>
+			<div class="form-group">
+				<label>Title: </label>
+				<input type="text" name="title" class="form-control" id="exampleInputEmail" placeholder="Title">
+			</div>
+			<div class="form-group">
+				<label>Insert Text: </label>
+				<textarea type="text" name="body" class="form-control" id="exampleInputEmail" placeholder="Your poem or text here"></textarea>
+				<label>Make this photo private: </label>
+				<input type="checkbox" name="private">
+			</div>
+
+			<button type="Submit" class="btn btn-dark">Add Poem</button>
+		</form>
+
+	</div>
 
 </body>
 </html>
