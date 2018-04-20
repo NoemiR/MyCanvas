@@ -22,7 +22,7 @@
 	</header>
 	<main>
 		<form action="/users/<%= user.id%>?_method=PUT" method="POST">
-			Name: <input type="text" name="name" value="<%= user.name%>">
+			Name: <input type="text" name="username" value="<%= user.username%>">
 			Email: <input type="text" name="email" placeholder="email" value="<%= user.email%>">
 			Password: <input type="text" name="password" placeholder="password" value="<%=user.password%>">
 			<button type="submit" name="Edit">Update My Info</button>
