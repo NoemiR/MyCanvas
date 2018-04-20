@@ -16,4 +16,4 @@ const poemSchema = mongoose.Schema({
 	}
 })
 
-module.exports = mongoose.model('Poems, poemSchema')
+module.exports = mongoose.model('Poems', poemSchema)

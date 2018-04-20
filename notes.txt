@@ -1,0 +1,9 @@
+login page 
+	show 
+	login / registration controller fuctionality
+	bcrypt for passwords 
+
+individual user show page - shows the photos and the poetry 
+
+
+user index - community canvas
