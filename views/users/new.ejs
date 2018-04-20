@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<title>New User</title>
 </head>
 <body>
+	<header>
+		<h1>Welcome to MyCanvas!</h1>
+		<nav>
+			<ul>
+				<li><a class="btn btn-primary btn-lg" href="/" role="button"></a></li>
+				<li><a href="/users">Users Index</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<form action="/users" method="Post">
+			<input type="text" name="name">
+			<input type="text" name="email" placeholder="email">
+			<input type="text" name="password" placeholder="password">
+			<button type="submit" name="submit" class="btn btn-primary btn-sm">Create User</button>
+		</form>
+	</main>
 
 </body>
 </html>

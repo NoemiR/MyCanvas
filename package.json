@@ -9,6 +9,7 @@
     "ejs": "^2.5.9",
     "express": "^4.16.3",
     "express-ejs-layouts": "^2.4.0",
+    "express-session": "^1.15.6",
     "gulp": "^3.9.1",
     "gulp-less": "^4.0.0",
     "method-override": "^2.3.10",
