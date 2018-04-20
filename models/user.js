@@ -13,8 +13,8 @@ const userSchema = mongoose.Schema({
 	email: {
 		type: String
 	},
-	photos: [Photos.Schema],
-	poems: [Poems.Schema]
+	photos: [Photos.schema],
+	poems: [Poems.schema]
 })
 
 module.exports = mongoose.model('Users', userSchema)
