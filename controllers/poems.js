@@ -7,22 +7,34 @@ const Poems = require('../models/poem');
 // this controller should only have 
 
 router.post('/', async (req, res, next) => {
-	// if the user is registered
-	if (req.session.username) {
-		const foundUser = await Users.findOne({username: req.session.username});
-	} else {
-		req.session.message = "You must be logged in to add a new photo. Please log in or create a new account"
-	}
+	req.session.username = "Hannah";
 
-	const newPoem = await Poems.create(req.body);
+	try {
+		// if the user is registered
+		if (req.session.username) {
+			const foundUser = await Users.findOne({username	: req.session.username});
 
-	foundUser.poems.push(newPoem);
-	foundUser.save();
+			const newPoem = await Poems.create(req.body);
 
-	res.redirect('/photos/') // potentially eventually redirect somewhere else
+			// res.send(foundUser)
+
+			foundUser.poems.push(newPoem);
+			foundUser.save();
+			//res.send(foundUser)
+			res.redirect('/users')
+		} else {
+			req.session.message = "You must be logged in 	to add a new photo. Please log in or 	create a new account"
+			res.send("You must be logged in to add a new 	photo. Please log in or create a new 	account")
+		}
+	
+		
+	
+		
+	} catch(err) {
+		next(err)
+	} 
 
 })
-
 
 
 

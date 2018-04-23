@@ -18,7 +18,7 @@ router.get('/new', (req, res, next) => {
 
 
 router.post('/', async (req, res, next) => {
-	req.session.username = "Hannah";
+	req.session.username = "hannah";
 
 	try {
 		// if the user is registered
@@ -29,10 +29,13 @@ router.post('/', async (req, res, next) => {
 
 			// res.send(foundUser)
 
+
 			foundUser.photos.push(newPhoto);
 			foundUser.save();
+
+			const foundUserId = foundUser._id
 			//res.send(foundUser)
-			res.redirect('/users')
+			res.redirect('/users/' + foundUserId)
 		} else {
 			req.session.message = "You must be logged in 	to add a new photo. Please log in or 	create a new account"
 			res.send("You must be logged in to add a new 	photo. Please log in or create a new 	account")
@@ -48,15 +51,72 @@ router.post('/', async (req, res, next) => {
 })
 
 // ** edit ** content route
-// router.get('/:id/edit', async (req, res, next) => {
-// 	try {
+router.get('/edit', async (req, res, next) => {
+	req.session.username = "hannah"
+	try {
+		// const foundPhoto = await Photos.findById(req.params.id);
 
-// 	}catch(err) {
-// 		next(err);
-// 	}
-// })
+		// const allUsers = await Users.find();
 
+		// const foundPhotoUser = await Users.findOne({'photos._id': req.params.id});
 
+		const user = await Users.findOne({username: req.session.username});
+
+		res.render('photos/edit.ejs', {
+			user: user
+		})
+	} catch (err) {
+		next(err)
+	}
+})
+
+router.put('/:id', async (req, res, next) => {
+	try {
+
+		const updatedPhoto = await Photos.findByIdAndUpdate(req.params.id, req.body, {new: true});
+
+		const foundUser = await Users.findOne({username: req.session.username});
+
+		foundUser.photos.id(req.params.id).remove();
+
+		foundUser.photos.push(updatedPhoto);
+
+		const foundUserId = foundUser.id;
+
+		const savedFoundUser = await foundUser.save();
+		res.redirect('/users/' + foundUserId)
+
+	}catch(err) {
+		next(err);
+	}
+})
+
+router.delete('/:id', async (req, res, next) => {
+	req.session.username = "hannah"
+
+	console.log('this route is being called');
+
+	try {
+		const foundPhoto = await Photos.findByIdAndRemove(req.params.id);
+
+		console.log(foundPhoto, "<--- the thing you are removing");
+		
+		const foundUser = await Users.findOne({username: req.session.username});
+
+		console.log(foundUser, "<---- before removing and saving the thing");
+
+		await foundUser.photos.id(req.params.id).remove();
+		await foundUser.save();
+
+		console.log(foundUser, "<---- after removing and saving the thing");
+
+		const foundUserId = foundUser._id
+
+		res.redirect('/users/' + foundUserId);
+	} catch(err) {
+		next(err);
+	}
+});
 
 
 
