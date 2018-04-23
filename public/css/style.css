@@ -7,41 +7,10 @@ body {
    max-width: 100vw;
    /*overflow: hidden;*/
    margin: 0px;
-   /*display: flex;*/
-   /*box-sizing: border-box;*/
+
 }
 
-.column {
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-}
 
-#left {
-   flex-shrink: 0;
-   width: 30%;
-   height: 100vh;
-   border: 1px solid white;
-}
-
-.top-left {
-   flex-shrink: 0;
-}
-
-.top-right {
-   flex-shrink: 0;
-   /*display: inline-flex;*/
-}
-
-/*ul {
-   display: inline-flex;
-   list-style: none;
-}*/
-
-.bottom {
-   flex-grow: 1;
-   overflow-y: auto;
-}
 
 .image {
    overflow: auto;
@@ -84,8 +53,8 @@ h2 {
    text-align: center;
 }
 
+/* ------ stuff for community canvas page -------*/
 .list-group-item {
-	/*background-color: rgba(255, 255, 255, 0.3);*/ 
 	 background: rgba(0, 0, 0, 0.4);
 	 font-family: 'Parisienne', cursive;
    font-size: 30px;
@@ -94,12 +63,14 @@ h2 {
 .list-group-item a {
 	color: white;
 }
+
+/* ------stuff for login page -----------*/
 .login {
 	margin-top: 300px;
 }
 #index {
 	background: rgba(0, 0, 0, 0.6);
-	justify-content: space-between;
+	justify-content: center;
 
 }
 .btn-primary {
@@ -107,4 +78,64 @@ h2 {
 	border-color: #0a0a0a; 
 }
 
+/*-------- stuff for user show page -----------*/
+
+.show-page {
+   display: flex;
+   box-sizing: border-box;
+   flex-direction: column;
+}
+
+.navbar {
+   width: 100%;
+   justify-content: right;
+}
+
+.other-stuff{
+   display: flex;
+}
+
+.column {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+#left {
+   flex-shrink: 0;
+   width: 25vw;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.music {
+   width: 100%;
+   height: 400px;
+   background-color: darkgreen;
+   border: 1px solid green;
+}
+
+.top-left {
+   flex-shrink: 0;
+}
+
+.top-right {
+   flex-shrink: 0;
+   /*display: inline-flex;*/
+}
+
+/*ul {
+   display: inline-flex;
+   list-style: none;
+}*/
+
+.bottom {
+   flex-grow: 1;
+   overflow-y: auto;
+   /*flex-direction: row;*/
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
