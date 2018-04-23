@@ -1,3 +1,5 @@
+-- GENERAL NOTES -- 
+
 login page 
 	show 
 	login / registration controller fuctionality
@@ -7,3 +9,10 @@ individual user show page - shows the photos and the poetry
 
 
 user index - community canvas
+
+
+-- PHOTO EDIT PAGE --
+
+Do we want users to be able to edit all their photos / poems at once? We could play around with an ejs template that allows users to see all the fields for all of their photos / poems on one page. 
+
+There are definitely still some bugs on this page that need to be worked out, but it is working for now. 
