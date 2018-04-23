@@ -44,3 +44,14 @@ h2 {
    color: white;
    text-align: center;
 }
+
+.list-group-item {
+	/*background-color: rgba(255, 255, 255, 0.3);*/ 
+	 background: rgba(0, 0, 0, 0.4);
+	 font-family: 'Parisienne', cursive;
+   font-size: 30px;
+}
+
+.list-group-item a {
+	color: white;
+}
