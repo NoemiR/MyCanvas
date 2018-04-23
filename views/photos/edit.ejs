@@ -20,7 +20,10 @@
 					<label>Make this photo private: </label>
 					<input type="checkbox" name="private">
 				</div>
-				<button type="Submit" class="btn btn-dark">Edit Photo</button>
+				<button type="Submit" class="btn btn-dark">Edit Photo</button>	
 			</form>
+			<form action="/photos/<%=user.photos[i]._id%>?_method=DELETE" method="POST">
+					<button>Delete This Photo</button>
+				</form>
 		<%}%>
 

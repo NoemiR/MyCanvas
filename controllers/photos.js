@@ -18,7 +18,7 @@ router.get('/new', (req, res, next) => {
 
 
 router.post('/', async (req, res, next) => {
-	req.session.username = "Hannah";
+	req.session.username = "hannah";
 
 	try {
 		// if the user is registered
@@ -52,7 +52,7 @@ router.post('/', async (req, res, next) => {
 
 // ** edit ** content route
 router.get('/edit', async (req, res, next) => {
-	req.session.username = "Hannah"
+	req.session.username = "hannah"
 	try {
 		// const foundPhoto = await Photos.findById(req.params.id);
 
@@ -60,10 +60,7 @@ router.get('/edit', async (req, res, next) => {
 
 		// const foundPhotoUser = await Users.findOne({'photos._id': req.params.id});
 
-		const user = await Users.findOne({username: req.session.username})
-
-		console.log(user, "<--- user")
-		console.log(req.session, "<--- req.session")
+		const user = await Users.findOne({username: req.session.username});
 
 		res.render('photos/edit.ejs', {
 			user: user
@@ -85,7 +82,6 @@ router.put('/:id', async (req, res, next) => {
 		foundUser.photos.push(updatedPhoto);
 
 		const foundUserId = foundUser.id;
-		console.log(foundUserId);
 
 		const savedFoundUser = await foundUser.save();
 		res.redirect('/users/' + foundUserId)
@@ -95,7 +91,32 @@ router.put('/:id', async (req, res, next) => {
 	}
 })
 
+router.delete('/:id', async (req, res, next) => {
+	req.session.username = "hannah"
 
+	console.log('this route is being called');
+
+	try {
+		const foundPhoto = await Photos.findByIdAndRemove(req.params.id);
+
+		console.log(foundPhoto, "<--- the thing you are removing");
+		
+		const foundUser = await Users.findOne({username: req.session.username});
+
+		console.log(foundUser, "<---- before removing and saving the thing");
+
+		await foundUser.photos.id(req.params.id).remove();
+		await foundUser.save();
+
+		console.log(foundUser, "<---- after removing and saving the thing");
+
+		const foundUserId = foundUser._id
+
+		res.redirect('/users/' + foundUserId);
+	} catch(err) {
+		next(err);
+	}
+});
 
 
 
