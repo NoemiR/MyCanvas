@@ -1,7 +1,11 @@
+<div class="image">
 	<img src="https://wallpapercave.com/wp/rIxU8YE.jpg">
-	<h1>Edit Canvas Content</h1>
+</div>
+	
 
 	<div class="container">
+
+		<h1>Edit Canvas Content</h1>
 
 		<% for (let i = 0; i < user.photos.length; i++ ) {%>
 		
@@ -24,7 +28,7 @@
 				<button type="Submit" class="btn btn-dark">Edit Photo</button>	
 			</form>
 			<form action="/photos/<%=user.photos[i]._id%>?_method=DELETE" method="POST">
-					<button>Delete This Photo</button>
+					<button class="btn btn-dark">Delete This Photo</button>
 				</form>
 		<%}%>
 
