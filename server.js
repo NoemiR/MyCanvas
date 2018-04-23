@@ -37,7 +37,8 @@ app.use('/users', usersController)
 const poemsController = require('./controllers/poems');
 app.use('/poems', poemsController)
 
-
+const authController = require('./controllers/auth');
+app.use('/auth', authController)
 
 
 

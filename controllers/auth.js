@@ -3,11 +3,11 @@ const router = express.Router();
 const User = require('../models/user')
 const bcrypt = require('bcrypt');
 
-router.get('/', (req, res) => {
-	res.render('users/login')	
+router.get('/login', (req, res) => {
+	res.render('auth/login')	
 })
 
-route.post('users/login', async (req, res, next) => {
+router.post('/login', async (req, res, next) => {
 	try {
 		const user = await User.findOne({username: req.body.username})
 		if(user){
@@ -26,7 +26,7 @@ route.post('users/login', async (req, res, next) => {
 	}
 })
 
-router.post('users/new', async (req, res, next) => {
+router.post('/new', async (req, res, next) => {
 	const password = req.body.password;
 	const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 	const newUser = {
