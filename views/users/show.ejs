@@ -6,7 +6,7 @@
 <body style="background-color: rgb(50, 50, 50);">
 	<header>
 	<h1 class="text-center display-3"><%= user.username%> Canvas</h1>
-	<nav>
+	<nav class="navbar" id="index">
 	<ul class="list-inline-item">
 		<li class="list-inline-item">
 			<a class="btn btn-primary btn-sm" href="/" role="button">Home</a>
@@ -14,6 +14,12 @@
 		<li class="list-inline-item">
 			<a class="btn btn-primary btn-sm" href="/users/new" role="button">Users Index</a>
 		</li>
+		<li class="list-inline-item"><a class="btn btn-primary btn-sm" href="/photos/new">Add Photos</a></li>
+		<li class="list-inline-item"><a class="btn btn-primary btn-sm" href="/photos/edit">Edit Content</a></li>
+		<li class="list-inline-item"><a class="btn btn-primary btn-sm" href="/users/<%= user.id%>/edit">Edit user information</a></li>
+			<li class="list-inline-item"><form action="/users/<%= user.id%>?_method=DELETE" method="POST">
+			<button class="btn btn-primary btn-sm">Delete</button>
+		</form></li>
 	</ul>	
 	</nav>
 	</header>
@@ -24,11 +30,9 @@
 			
 		<% } -%>
 		<% } -%>
-		<li><a href="/photos/new">Add Photos</a></li>
-		<li><a href="/photos/edit">Edit Content</a></li>
-		<li><a href="/users/<%= user.id%>/edit">Edit user information</a><form action="/users/<%= user.id%>?_method=DELETE" method="POST">
-			<button>Delete</button>
-		</form></li>
+		<!-- <nav class="navbar" id="index"> -->
+		
+		<!-- </nav> -->
 	</ul>
 	</main>
 </body>

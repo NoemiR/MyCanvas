@@ -4,19 +4,19 @@
 
 <div class="container">
 
-	<header>
+
 		<h1>Welcome to MyCanvas!</h1>
-		<nav>
-			<ul>
-				<li><a class="btn btn-primary btn-lg" href="/" role="button">Home</a></li>
-				<li><a href="/users">Users Index</a></li>
+		<nav class="navbar" id="index">
+			<ul class="list-inline-item">
+				<li class="list-inline-item"><a href="/">Home</a></li>
+				<li class="list-inline-item"><a href="/users">Users Index</a></li>
 			</ul>
 		</nav>
-	</header>
+	
 	<main>
 		<form action="/users" method="POST">
 			<input type="text" name="username">
-			<input type="text" name="email" placeholder="email">
+			<input type="text" name="email" placeholder="email"> 
 			<input type="text" name="password" placeholder="password">
 			<button type="submit" name="submit" class="btn btn-primary btn-sm">Create User</button>
 		</form>
