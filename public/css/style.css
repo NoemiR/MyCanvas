@@ -1,7 +1,13 @@
+body {
+   overflow: auto;
+   max-width: 100vw;
+   max-width: 100vh;
+}
+
 image {
 	position: relative;
 	background-size: cover; 
-   width: 100vw;
+   max-width: 100vw;
    height: 100vh;
 }
 
@@ -11,26 +17,12 @@ image {
    left: 0px;
    right:0px; 
    margin: 0px;
+   width: auto;
    max-width: 100vw;
-   height: 100vh; 
+   height: 130%; 
    background: rgba(0, 0, 0, 0.5);
-
-
-/*.container {
- position: fixed;
- top: -50%;
- left: -50%;
- width: 200%;
- height: 200%;
 }
-.container > img {
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- margin: auto;
- min-width: 50%;
- min-height: 50%;*/
-/*}*/
+
+h1 {
+   color: white;
 }
