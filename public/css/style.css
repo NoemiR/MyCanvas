@@ -94,3 +94,17 @@ h2 {
 .list-group-item a {
 	color: white;
 }
+.login {
+	margin-top: 300px;
+}
+#index {
+	background: rgba(0, 0, 0, 0.6);
+	justify-content: space-between;
+
+}
+.btn-primary {
+	background-color: #9E9E9E;
+	border-color: #0a0a0a; 
+}
+
+
