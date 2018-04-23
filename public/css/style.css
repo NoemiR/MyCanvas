@@ -58,13 +58,15 @@ h2 {
 	margin-top: 300px;
 }
 #index {
-	background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 0, 0, 0.3);
 	justify-content: space-between;
+	color: white;
 
 }
 .btn-primary {
 	background-color: #9E9E9E;
 	border-color: #0a0a0a; 
 }
+
 
 

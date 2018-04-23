@@ -13,13 +13,21 @@
 				</li>
 			</ul>
 		</nav>
-	
+	<!-- <div class="edit"> -->
+  <!-- <img class="card-img" src="..." alt="Card image"> -->
+  
 	<main>
 		<form action="/users/<%= user.id%>?_method=PUT" method="POST">
-			Name: <input type="text" name="username" value="<%= user.username%>">
-			Email: <input type="text" name="email" placeholder="email" value="<%= user.email%>">
-			Password: <input type="text" name="password" placeholder="password" value="<%=user.password%>">
-			<button type="submit" name="Edit">Update My Info</button>
+			<div class="form-group">
+			<input class="form-control" type="text" name="username" placeholder="name" value="<%= user.username%>"></div>
+			<div class="form-group">
+			<input class="form-control" type="text" name="email" placeholder="email" value="<%= user.email%>"></div>
+			<div class="form-group">
+			<input class="form-control" type="text" name="password" placeholder="password" value="<%=user.password%>"></div>
+			<div class="form-group">
+			<button type="submit" name="Edit">Update My Info</button></div>
 		</form>
 	</main>
+<!-- </div> -->
+
 </div>
