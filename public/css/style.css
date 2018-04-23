@@ -1,6 +1,5 @@
 body {
-   
-   
+   font-family: 'Open Sans', sans-serif;   
    max-width: 100vw;
 }
 
@@ -8,7 +7,7 @@ body {
    overflow: auto;
 }
 
-img {
+.image > img  {
 	position: relative;
 	/*background-size: cover; 
    min-height: 100%;
@@ -18,6 +17,7 @@ img {
 }
 
 .container {
+   padding-top: 20px;
 	position: absolute; 
    top: 0px; 
    left: 0px;
@@ -37,14 +37,20 @@ h1 {
    font-family: 'Parisienne', cursive;
    font-size: 80px;
 }
+
+h2 {
+   font-family: 'Parisienne', cursive;
+   color: white;
+   text-align: center;
+}
+
 .list-group-item {
 	/*background-color: rgba(255, 255, 255, 0.3);*/ 
 	 background: rgba(0, 0, 0, 0.4);
 	 font-family: 'Parisienne', cursive;
    font-size: 30px;
-   
-
 }
+
 .list-group-item a {
 	color: white;
 }
