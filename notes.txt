@@ -16,3 +16,25 @@ user index - community canvas
 Do we want users to be able to edit all their photos / poems at once? We could play around with an ejs template that allows users to see all the fields for all of their photos / poems on one page. 
 
 There are definitely still some bugs on this page that need to be worked out, but it is working for now. 
+
+
+-- PASTED STUFF FROM SHOW.EJS IN CASE WE NEED IT -- 
+
+	<header>
+	
+
+<!-- 	</header>
+	<main>
+	<ul>
+		<% if(user.photos != undefined) {%>
+		<% for (let i = 0; i < user.photos.length; i++) { -%><li><a href="/photos/<%=user.photos[i].id%>"><img src="<%= user.photos[i].url%>"></a></li>
+			
+		<% } -%>
+		<% } -%>
+		<!-- <nav class="navbar" id="index"> -->
+		
+		<!-- </nav> -->
+	</ul>
+	</main>
+</body>
+</html> -->
