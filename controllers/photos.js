@@ -51,6 +51,10 @@ router.post('/', async (req, res, next) => {
 
 // ** edit ** content route
 router.get('/edit', async (req, res, next) => {
+
+	// if there is stuff in that user's photo array, then do this
+	// else redirect to the user's content page and display a message that says you must first add content before you can add it 
+
 	try {
 		// const foundPhoto = await Photos.findById(req.params.id);
 
@@ -59,10 +63,18 @@ router.get('/edit', async (req, res, next) => {
 		// const foundPhotoUser = await Users.findOne({'photos._id': req.params.id});
 
 		const user = await Users.findOne({username: req.session.username});
+		res.send(req.session)
 
-		res.render('photos/edit.ejs', {
-			user: user
-		})
+		// if (user.photos) {
+		// 	res.render('photos/edit.ejs', {
+		// 		user: user
+		// 	})
+		// } else {
+		// 	req.session.message = "You have no content! Please add content to your page before trying to edit."
+		// 	res.redirect('/users/' + user._id)
+		// }
+
+		
 	} catch (err) {
 		next(err)
 	}
