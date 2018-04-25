@@ -79,10 +79,14 @@ router.post('/', async (req, res, next) => {
 
 
 router.get('/:id', async (req, res, next) => {
+	const message = req.session.message;
+	req.session.message = null;
+
 	try {
 		const foundUser = await Users.findById(req.params.id)
 		res.render('users/show.ejs', {
 			user: foundUser,
+			message: message
 		})
 
 	} catch (err) {

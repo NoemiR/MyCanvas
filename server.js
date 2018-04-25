@@ -42,7 +42,9 @@ app.use('/auth', authController)
 
 
 
-
+app.get('/example', (req, res) => {
+	res.send(req.query)
+})
 
 
 
