@@ -14,6 +14,7 @@ router.post('/login', async (req, res, next) => {
 			if(bcrypt.compareSync(req.body.password, user.password)){
 				req.session.logged = true;
 				req.session.username = user.username;
+				console.log(req.session, "<--------req session")
 				res.redirect('/')
 			}
 		} else {
