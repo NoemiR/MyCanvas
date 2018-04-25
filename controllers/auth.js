@@ -6,6 +6,9 @@ const bcrypt = require('bcrypt');
 router.get('/login', (req, res) => {
 	res.render('auth/login')	
 })
+router.get('/home', (req, res) => {
+	res.render('auth/home')	
+})
 
 router.post('/login', async (req, res, next) => {
 	try {
@@ -15,7 +18,7 @@ router.post('/login', async (req, res, next) => {
 				req.session.logged = true;
 				req.session.username = user.username;
 				console.log(req.session, "<--------req session")
-				res.redirect('/')
+				res.redirect('users/index')
 			}
 		} else {
 			req.session.message = "username or password is incorrect"
@@ -43,7 +46,7 @@ router.post('/new', async (req, res, next) => {
 			res.redirect('users/index.ejs')
 		} else {
 			req.session.message = 'Sorry try again'
-			res.redirect('users/login')
+			res.redirect('auth/home')
 		}
 
 	} catch (err) {
