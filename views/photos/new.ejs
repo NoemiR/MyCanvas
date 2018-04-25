@@ -27,11 +27,7 @@
 
 
 		<form action='/poems' method="POST">
-			<select name="userId">
-			<% for (let i = 0; i < users.length; i++) { -%>
-				<option value="<%=users[i].id%>"><%=users[i].name%></option>
-			<% } -%>
-		</select><br>
+		
 			<h2>Add a Poem</h2>
 			<div class="form-group">
 				<label>Title: </label>
