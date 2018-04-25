@@ -18,11 +18,11 @@ router.post('/login', async (req, res, next) => {
 				req.session.logged = true;
 				req.session.username = user.username;
 				console.log(req.session, "<--------req session")
-				res.redirect('users/index')
+				res.redirect('/users')
 			}
 		} else {
 			req.session.message = "username or password is incorrect"
-			res.redirect('/')
+			res.redirect('/auth/home')
 		}
 
 	}catch (err) {
@@ -41,12 +41,14 @@ router.post('/new', async (req, res, next) => {
 	try {
 		const user = await User.create(newUser)
 		if(user){
+
+			console.log('are we making a user I doubt it ')
 			req.session.logged = true;
 			req.session.username = user.username;
-			res.redirect('users/index.ejs')
+			res.redirect('/users')
 		} else {
 			req.session.message = 'Sorry try again'
-			res.redirect('auth/home')
+			res.redirect('/auth/home')
 		}
 
 	} catch (err) {

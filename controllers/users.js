@@ -63,6 +63,7 @@ router.delete('/:id', async (req, res, next) => {
 
 
 router.post('/', async (req, res, next) => {
+	
 	try {
 		const createdUser = await Users.create(req.body);
 		res.redirect('/users')
@@ -84,6 +85,7 @@ router.get('/:id', async (req, res, next) => {
 
 	try {
 		const foundUser = await Users.findById(req.params.id)
+		console.log(foundUser);
 		res.render('users/show.ejs', {
 			user: foundUser,
 			message: message
