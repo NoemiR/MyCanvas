@@ -18,12 +18,11 @@ router.get('/new', (req, res, next) => {
 
 
 router.post('/', async (req, res, next) => {
-	req.session.username = "hannah";
 
 	try {
 		// if the user is registered
-		if (req.session.username) {
-			const foundUser = await Users.findOne({username	: req.session.username});
+		if (req.session.logged === true) {
+			const foundUser = await Users.findOne({username: req.session.username});
 
 			const newPhoto = await Photos.create(req.body);
 
@@ -52,7 +51,6 @@ router.post('/', async (req, res, next) => {
 
 // ** edit ** content route
 router.get('/edit', async (req, res, next) => {
-	req.session.username = "hannah"
 	try {
 		// const foundPhoto = await Photos.findById(req.params.id);
 
@@ -92,7 +90,6 @@ router.put('/:id', async (req, res, next) => {
 })
 
 router.delete('/:id', async (req, res, next) => {
-	req.session.username = "hannah"
 
 	console.log('this route is being called');
 
