@@ -7,9 +7,11 @@
 
 		<h1>Edit Canvas Content</h1>
 
-		<% for (let i = 0; i < user.photos.length; i++ ) {%>
+		
 		
 			<form action='/photos/<%=user.photos[i]._id%>?_method=PUT' method	="POST">
+				<% for (let i = 0; i < user.photos.length; i++ ) {%>
+				<% } -%>
 				
 				<div class="form-group">
 					<label>Image Source: </label>
