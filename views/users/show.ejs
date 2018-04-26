@@ -52,13 +52,13 @@
 				<p style="background-color: pink"><%=message%></p>
 			<%}%>
 			
-	    	<div class="images" >
+	    	<div class="images card" >
 	    		<% if(user.photos != undefined) {%>
 					<% for (let i = user.photos.length-1; i >= 0; i--) { -%>
 						<% if (user.photos[i].url) {%>
-							<div class="photoContainer">
-								<img src="<%= user.photos[i].url%>" class="show-image">
-							</div>
+							
+								<img src="<%= user.photos[i].url%>" class="show-image card-img img-fluid">
+						
 						<%} %>
 					<% } -%>
 				<% } -%>
@@ -66,7 +66,7 @@
 				<% if(user.poems != undefined) {%>
 					<% for (let i = user.poems.length-1; i >= 0; i--) { -%>
 		
-							<div class="show-image"><%=user.poems[i].body%></div>
+							<div class="show-image card card-block poem"><%=user.poems[i].body%></div>
 						
 					<% } -%>
 				<% } -%>
