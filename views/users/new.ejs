@@ -5,11 +5,15 @@
 <div class="container">
 
 	<!-- this is the register new user page -->	
-		<div id="navbar">
-		<nav class="navbar" id="index">
+			<div class="sticky-top">
+		<nav class="sticky-top">
 			<ul class="list-inline-item">
 				<li class="list-inline-item"><a href="/auth/home">Home</a></li>
 				<li class="list-inline-item"><a href="/users/">Community Canvas</a></li>
+				<li class="list-inline-item">
+					<a  href="/auth/login">Login</a>
+				</li>
+				
 			</ul>
 		</nav>
 </div>
@@ -17,6 +21,7 @@
 	<main>
 		<div class="row">
 		<div class="field">
+			<div class="login">
 			
 		<form action="/auth/new" method="POST">
 			
@@ -24,8 +29,8 @@
 			<input class="form-control" type="text" name="username" placeholder="username">
 			<input class="form-control" type="text" name="email" placeholder="email">
 			<input class="form-control" type="password" name="password" placeholder="password">
-			<button type="submit" name="submit" class="btn btn-primary btn-sm">Create User</button>
-		</form></div></div>
+			<button type="submit" name="submit" class="btn btn-primary btn-sm">Register</button>
+		</form></div></div></div>
 	</main>
 
 </div>
