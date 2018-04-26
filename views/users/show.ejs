@@ -58,6 +58,13 @@
 					<% } -%>
 				<% } -%>
 
+				<% if(user.poems != undefined) {%>
+					<% for (let i = user.poems.length-1; i >= 0; i--) { -%>
+		
+							<div class="show-image"><%=user.poems[i].body%></div>
+						
+					<% } -%>
+				<% } -%>
 			
 
         	</div>

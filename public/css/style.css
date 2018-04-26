@@ -167,6 +167,7 @@ h2 {
    width: 25vw;
    height: 100vh;
    background-color: rgba(0, 0, 0, 0.7);
+   position: sticky;
 }
 
 .music {
@@ -249,10 +250,10 @@ p {
    margin-top: 5px;
    /*height: auto;*/
    /*object-fit: scale-down;*/
-   border: 1px solid red;
+   /*border: 1px solid red;*/
    transition: .8s opacity;
    /*align-self: flex-start;*/
-   color: white;
+   color: black;
    font-family: 'Open Sans', sans-serif;  
 }
 
