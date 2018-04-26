@@ -6,10 +6,10 @@ const Poems = require('../models/poem');
 
 // this controller should only have 
 
-router.get('/new', (req, res, next) => {
+// router.get('/new', (req, res, next) => {
 
-	res.render('poems/new.ejs', {})
-})
+// 	res.render('poems/new.ejs', {})
+// })
 
 
 router.post('/', async (req, res, next) => {
@@ -25,6 +25,7 @@ router.post('/', async (req, res, next) => {
 
 
 			foundUser.poems.push(newPoem);
+			console.log(foundUser);
 			foundUser.save();
 
 			const foundUserId = foundUser._id
@@ -41,7 +42,9 @@ router.post('/', async (req, res, next) => {
 
 })
 
-// ** edit ** content route
+// ** edit ** content route 
+
+// I THINK THIS IS IRRELEVANT IN THIS CONTROLLER BUT STILL UNSURE. 
 router.get('/edit', async (req, res, next) => {
 
 	// if there is stuff in that user's photo array, then do this

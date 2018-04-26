@@ -32,7 +32,8 @@
         	<div class="top-left"></div>
         	<div class="bottom">
         		<div class="music">
-        			<p>music api will go in here</p>
+        			<p>Add some music! </p>
+        			<iframe src="https://open.spotify.com/embed?uri=spotify:user:12161249065:playlist:0TfEsGcJcuhLiK7bS2o8DF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         		</div>
         	</div>
     	</div>
@@ -51,10 +52,13 @@
 	    	<div class="images">
 	    		<% if(user.photos != undefined) {%>
 					<% for (let i = user.photos.length-1; i >= 0; i--) { -%>
-						<img src="<%= user.photos[i].url%>" class="show-image">
-			
+						<% if (user.photos[i].url) {%>
+							<img src="<%= user.photos[i].url%>" class="show-image">
+						<%} %>
 					<% } -%>
 				<% } -%>
+
+			
 
         	</div>
         </div>

@@ -180,10 +180,16 @@ h2 {
 }
 
 .music {
-   width: 100%;
-   height: 400px;
+   width: 300px;
+   height: 420px;
    background-color: darkgreen;
    border: 1px solid green;
+}
+
+p {
+   color: white;
+   font-family: 'Open Sans', sans-serif;  
+   text-align: center;
 }
 
 .top-left {
@@ -241,6 +247,9 @@ h2 {
 
 
 /*-------- styling user show page ------------*/
+
+/*create a max number of columns */
+
 .images {
    padding: 5px;
 /*   display: -ms-flexbox;
@@ -249,16 +258,21 @@ h2 {
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
-   height: 100%;
+   height: 200%;
+   width: 75vw;
+   /*overflow-x: auto;*/
+   /*width: 100%;*/
    /*align-items: flex-start;*/
    align-content: flex-start;
-
+   overflow-y: scroll;
 }
 
 .show-image{
    /*max-width: 23%;*/
-   flex: auto;
-   width: 200px;
+   /*flex: auto;*/
+   max-width: 200px;
+   /*width: auto;*/
+   /*height: auto;*/
    margin-left: 5px;
    margin-right: 5px;
    margin-bottom: 5px;
@@ -267,6 +281,9 @@ h2 {
    /*object-fit: scale-down;*/
    border: 1px solid red;
    transition: .8s opacity;
+   /*align-self: flex-start;*/
+   color: white;
+   font-family: 'Open Sans', sans-serif;  
 }
 
 .show-image:hover{
