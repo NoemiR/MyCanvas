@@ -1,42 +1,64 @@
 <div class="image">
-	<img src="https://wallpapercave.com/wp/4ad48lx.jpg">
+	<img src="https://i.pinimg.com/originals/94/fd/bb/94fdbb07485838e44f4db58885e1310b.jpg">
 </div>
 
-	<h1>Add Content to myCanvas</h1>
+<!-- 	<img src="https://wallpapercave.com/wp/4ad48lx.jpg"> -->
 
 	<div class="container">
-		
-		<form action='/photos' method="POST">
+			<div id="navbar">
+			<nav class="navbar-static-top navbar" id="index">
+			<ul class="list-inline-item">
+				<li class="list-inline-item">
+					<a  href="/auth/home">Home</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="/users/new">Register</a>
+				</li>
+				<li class="list-inline-item">
+					<a  href="/auth/login">Login</a>
+				</li>
+				<li class="list-inline-item">
+						<a href="/users/">Community Canvas</a>
+					</li>
+			</ul>
+		</nav>
+	</div>
+
+		<h1>Add Content to myCanvas</h1>
+		<form action='/photos' method="POST"><div class="field">
+			<div class="row">
+				<div class="form-group col-md-6">
 			<h2>Add a Photo</h2>
-			<div class="form-group">
+			<!-- < --><!-- div class="form-group"> -->
 				<label>Image Source: </label>
 				<input type="text" name="url" class="form-control" id="exampleInputEmail" placeholder="Image URL" />
-			</div>
-			<div class="form-group">
+			<!-- </div>
+			<div class="form-group"> -->
 				<label>Image Title: </label>
 				<input type="text" name="title" class="form-control" id="exampleInputEmail" placeholder="Image Title" />
-			</div>
-			<div class="form-group">
+		<!-- 	</div>
+			<div class="form-group"> -->
 				<label>Image Description: </label>
 				<input type="text" name="description" class="form-control" id="exampleInputEmail" placeholder="Add a description of your photo"/>
-			</div>
+			<!-- </div> -->
 			<button type="Submit" class="btn btn-dark">Add Photo</button>
 		</form>
-
-
+</div>
+<div class="form-group col-6">
 		<form action='/poems' method="POST">
 		
 			<h2>Add a Poem</h2>
-			<div class="form-group">
+		<!-- 	<div class="form-group"> -->
 				<label>Title: </label>
 				<input type="text" name="title" class="form-control" id="exampleInputEmail" placeholder="Title">
-			</div>
-			<div class="form-group">
+			<!-- </div>
+			<div class="form-group"> -->
 				<label>Insert Text: </label>
 				<textarea type="text" name="body" class="form-control" id="exampleInputEmail" placeholder="Your poem or text here"></textarea>
-			</div>
+			<!-- </div> -->
 
 			<button type="Submit" class="btn btn-dark">Add Poem</button>
-		</form>
+		</form></div>
+	</div></div>
 
 	</div>
