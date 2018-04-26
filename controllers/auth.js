@@ -55,8 +55,17 @@ router.post('/new', async (req, res, next) => {
 		next(err)
 	}	
 })
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.log("oh shit", err);
 
-
+        } else {
+        	console.log('success')
+            res.redirect('/auth/home')
+        }
+    })        
+})
 
 
 
