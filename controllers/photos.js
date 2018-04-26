@@ -63,17 +63,21 @@ router.get('/edit', async (req, res, next) => {
 		// const foundPhotoUser = await Users.findOne({'photos._id': req.params.id});
 
 		const user = await Users.findOne({username: req.session.username});
+
+		if (user) {
 		// res.send(req.session)
 
-		if (user.photos) {
-			res.render('photos/edit.ejs', {
-				user: user
-			})
+			if (user.photos) {
+				res.render('photos/edit.ejs', {
+					user: user
+				})
+			} else {
+				req.session.message = "You have no content! Please add content to your page before trying to edit."
+				res.redirect('/users/' + user._id)
+			}
 		} else {
-			req.session.message = "You have no content! Please add content to your page before trying to edit."
-			res.redirect('/users/' + user._id)
+			res.send("You must be logged in to add or edit content.")
 		}
-
 		
 	} catch (err) {
 		next(err)

@@ -46,13 +46,19 @@ router.get('/', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
 	try {
-		const deletedUser = await Users.findByIdAndRemove(req.params.id);
-		const photoId = [];
-		for(let i = 0; i < deletedUser.photos.length; i++){
-			photoId.push(deletedUser.photos[i]._id)
-		} 
-		const deletedUserPhotos = await Photos.remove({_id: {$in: photoId}})
-		res.redirect('/users')
+		const user = await Users.findById(req.params.id)
+		if (user.username === req.session.username) {
+			const deletedUser = await Users.findByIdAndRemove(req.params.id);
+			const photoId = [];
+			for(let i = 0; i < deletedUser.photos.length; i++){
+				photoId.push(deletedUser.photos[i]._id)
+			} 
+			const deletedUserPhotos = await Photos.remove({_id: {$in: photoId}})
+			res.redirect('/users')
+		} else {
+			res.send("you can't delete")
+		}
+		
 
 	} catch (err) {
 		next(err)
@@ -100,11 +106,16 @@ router.get('/:id', async (req, res, next) => {
 
 router.get('/:id/edit', async (req, res, next) => {
 	try {
+		const user = await Users.findById(req.params.id)
+		if (user.username === req.session.username) {
 		const updatedUser = await Users.findById(req.params.id)
 		res.render('users/edit.ejs', {
 			user: updatedUser
 
 		})
+	}else {
+			res.send("you can't edit others stuff")
+		}
 	} catch (err) {
 		next(err)
 	}	
