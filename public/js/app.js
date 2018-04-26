@@ -11,3 +11,17 @@
 //   }
 // }
 // window.onscroll = function() {stickyNav()};
+
+
+$.ajax({
+	url: '/photos/' + id,
+	method: 'Get',
+	dataType: 'json',
+	success: (pictureData) => {
+		// this is the response from the server
+		console.log(pictureData)
+	},
+	error: (err) => {
+		console.log(err)
+	}
+})

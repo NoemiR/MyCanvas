@@ -56,7 +56,9 @@ router.delete('/:id', async (req, res, next) => {
 			const deletedUserPhotos = await Photos.remove({_id: {$in: photoId}})
 			res.redirect('/users')
 		} else {
-			res.send("you can't delete")
+			// res.send("you can't delete")
+			req.session.message = "You cannot delete other accounts. Please log in to delete your own account."
+			res.redirect('/auth/login')
 		}
 		
 
@@ -114,7 +116,9 @@ router.get('/:id/edit', async (req, res, next) => {
 
 		})
 	}else {
-			res.send("you can't edit others stuff")
+			// res.send("you can't edit others stuff")
+			req.session.message = "You do not have permission to edit this content."
+			res.redirect('/auth/login')
 		}
 	} catch (err) {
 		next(err)

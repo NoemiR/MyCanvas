@@ -1,5 +1,5 @@
 <div class="image">
-	<img src="https://wallpapercave.com/wp/rIxU8YE.jpg">
+	<img src="https://i.ytimg.com/vi/lcL678AASFc/maxresdefault.jpg">
 </div>
 	
 
@@ -26,14 +26,15 @@
 		<h1>Edit Canvas Content</h1>
 
 		
-		
+		<div class="field">
+			<div class="row">
+				<div class="form-group col-6">
 			
-			<% for (let i = 0; i < user.photos.length; i++ ) {%>
+				<% for (let i = 0; i < user.photos.length; i++ ) {%>
 				
 				<form action='/photos/<%=user.photos[i]._id%>?_method=PUT' method	="POST">
-					<div class="field">
-					<div class="row">
-						<div class="form-group col-6">
+					
+						
 						<label>Image Source: </label>
 						<input type="text" name="url" class="	form-control" id="exampleInputEmail" value="<%=	user.photos[i].url%>" />
 					
@@ -49,22 +50,21 @@
 				</form>
 
 				<form action="/photos/<%=user.photos[i]._id%>?_method=DELETE" method="POST">
-						<button class="btn btn-dark">Delete This Photo</button></div>
+						<button class="btn btn-dark">Delete This Photo</button>
 					</form>
 		<%}%>
+		</div>
+
 <div class="form-group col-6">
 
 			<% for (let i = 0; i < user.poems.length; i++ ) {%>
 				
 				<form action='/poems/<%=user.poems[i]._id%>?_method=PUT' method	="POST">
-			
-						<label>Image Source: </label>
-						<input type="text" name="url" class="	form-control" id="exampleInputEmail" value="<%=	user.poems[i].url%>" />
 				
-						<label>Image Title: </label>
+						<label>Poem Title: </label>
 						<input type="text" name="title" class="	form-control" id="exampleInputEmail" value="<%=	user.poems[i].title%>" />
 					
-						<label>Image Description: </label>
+						<label>Poem Text </label>
 						<input type="text" name="description" class="	form-control" id="exampleInputEmail" value="<%=	user.poems[i].description%>"/>
 						
 				
@@ -75,3 +75,4 @@
 					</form>
 		<%}%>
 	</div>
+</div>

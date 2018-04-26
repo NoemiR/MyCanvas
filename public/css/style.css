@@ -167,6 +167,7 @@ h2 {
    width: 25vw;
    height: 100vh;
    background-color: rgba(0, 0, 0, 0.7);
+   position: sticky;
 }
 
 .music {
@@ -219,6 +220,12 @@ p {
 /*-------- styling user show page ------------*/
 
 /*create a max number of columns */
+.photoContainer {
+   height: 200px;
+   width: 200px;
+   margin-right: 1%;
+}
+
 
 .images {
    padding: 5px;
@@ -226,15 +233,15 @@ p {
    -ms-flex-direction: column;
    -ms-flex-wrap: wrap;*/
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    flex-wrap: wrap;
-   height: 200%;
-   width: 75vw;
+   height: 100%;
+   width: 100%;
    /*overflow-x: auto;*/
    /*width: 100%;*/
    /*align-items: flex-start;*/
    align-content: flex-start;
-   overflow-y: scroll;
+  
 }
 
 .show-image{
@@ -249,10 +256,10 @@ p {
    margin-top: 5px;
    /*height: auto;*/
    /*object-fit: scale-down;*/
-   border: 1px solid red;
+   /*border: 1px solid red;*/
    transition: .8s opacity;
    /*align-self: flex-start;*/
-   color: white;
+   color: black;
    font-family: 'Open Sans', sans-serif;  
 }
 

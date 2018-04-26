@@ -12,6 +12,10 @@
 		</nav>
 </div>
 	<!-- <a href="users/login">Login</a> -->
+	<% if (message) {%>
+		<p style="background-color: pink"><%=message%></p>
+	<%}%>
+	
 	<div class="login">
 	<form action="/auth/login" method="POST" id="login">
 		<h1>Login</h1>
