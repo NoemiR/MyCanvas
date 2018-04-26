@@ -46,14 +46,18 @@
     		<% if (message) {%>
 				<p style="background-color: pink"><%=message%></p>
 			<%}%>
-        	
-        	<ul><% if(user.photos != undefined) {%>
-				<% for (let i = 0; i < user.photos.length; i++) { -%><li><a href="/photos/<%=user.photos[i].id%>"><img src="<%= user.photos[i].url%>"></a></li>
 			
+        	<div class="images">
+        		<% if(user.photos != undefined) {%>
+					<% for (let i = 0; i < user.photos.length; i++) { -%>
+						<img src="<%= user.photos[i].url%>" class="show-image">
+			
+					<% } -%>
 				<% } -%>
-			<% } -%>
+        	</div>
+        	
 		
-			</ul>
+			
 
 
 

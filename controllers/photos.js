@@ -40,9 +40,6 @@ router.post('/', async (req, res, next) => {
 			res.send("You must be logged in to add a new 	photo. Please log in or create a new 	account")
 		}
 	
-		
-	
-		
 	} catch(err) {
 		next(err)
 	} 
@@ -96,7 +93,7 @@ router.put('/:id', async (req, res, next) => {
 		const savedFoundUser = await foundUser.save();
 		res.redirect('/users/' + foundUserId)
 
-	}catch(err) {
+	} catch(err) {
 		next(err);
 	}
 })
@@ -122,25 +119,11 @@ router.delete('/:id', async (req, res, next) => {
 		const foundUserId = foundUser._id
 
 		res.redirect('/users/' + foundUserId);
+
 	} catch(err) {
 		next(err);
 	}
 });
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;
