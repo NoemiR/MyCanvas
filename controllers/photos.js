@@ -11,6 +11,9 @@ const Poems = require('../models/poem');
 // we want users to only be able to modify content on their own page.
 
 // ** new ** content route
+
+
+
 router.get('/new', (req, res, next) => {
 
 	res.render('photos/new.ejs', {})
@@ -39,9 +42,9 @@ router.post('/', async (req, res, next) => {
 		
 			res.redirect('/users/' + foundUserId)
 		} else {
-			req.session.message("You must be logged in to add a new photo. Please log in or create a new account")
+			req.session.message = "You must be logged in to add a new photo. Please log in or create a new account"
 			// res.send("You must be logged in to add a new 	photo. Please log in or create a new 	account")
-			res.redirect('/login')
+			res.redirect('/auth/login')
 		}
 	
 	} catch(err) {
@@ -53,15 +56,7 @@ router.post('/', async (req, res, next) => {
 // ** edit ** content route
 router.get('/edit', async (req, res, next) => {
 
-	// if there is stuff in that user's photo array, then do this
-	// else redirect to the user's content page and display a message that says you must first add content before you can add it 
-
 	try {
-		// const foundPhoto = await Photos.findById(req.params.id);
-
-		// const allUsers = await Users.find();
-
-		// const foundPhotoUser = await Users.findOne({'photos._id': req.params.id});
 
 		const user = await Users.findOne({username: req.session.username});
 
@@ -77,7 +72,8 @@ router.get('/edit', async (req, res, next) => {
 				res.redirect('/users/' + user._id)
 			}
 		} else {
-			res.send("You must be logged in to add or edit content.")
+			req.session.message = "You must be logged in to add or edit content."
+			res.redirect('/auth/login')
 		}
 		
 	} catch (err) {
@@ -108,21 +104,13 @@ router.put('/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
 
-	console.log('this route is being called');
-
 	try {
 		const foundPhoto = await Photos.findByIdAndRemove(req.params.id);
-
-		console.log(foundPhoto, "<--- the thing you are removing");
 		
 		const foundUser = await Users.findOne({username: req.session.username});
 
-		console.log(foundUser, "<---- before removing and saving the thing");
-
 		await foundUser.photos.id(req.params.id).remove();
 		await foundUser.save();
-
-		console.log(foundUser, "<---- after removing and saving the thing");
 
 		const foundUserId = foundUser._id
 
@@ -133,5 +121,13 @@ router.delete('/:id', async (req, res, next) => {
 	}
 });
 
+
+
+// router.get('/:id', (req, res) => {
+// 	// query the db for the specific photo
+
+// 	// whatever you put in res.json is what will show up in the ajax success function
+// 	res.json(// the object that is return from your query)
+// })
 
 module.exports = router;

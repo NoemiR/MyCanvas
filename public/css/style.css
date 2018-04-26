@@ -220,6 +220,12 @@ p {
 /*-------- styling user show page ------------*/
 
 /*create a max number of columns */
+.photoContainer {
+   height: 200px;
+   width: 200px;
+   margin-right: 1%;
+}
+
 
 .images {
    padding: 5px;
@@ -227,15 +233,15 @@ p {
    -ms-flex-direction: column;
    -ms-flex-wrap: wrap;*/
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    flex-wrap: wrap;
-   height: 200%;
-   width: 75vw;
+   height: 100%;
+   width: 100%;
    /*overflow-x: auto;*/
    /*width: 100%;*/
    /*align-items: flex-start;*/
    align-content: flex-start;
-   overflow-y: scroll;
+  
 }
 
 .show-image{

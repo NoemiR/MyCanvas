@@ -4,7 +4,11 @@ const User = require('../models/user')
 const bcrypt = require('bcrypt');
 
 router.get('/login', (req, res) => {
-	res.render('auth/login')	
+	const message = req.session.message;
+	req.session.message = null;
+	res.render('auth/login', {
+		message: message
+	})	
 })
 router.get('/home', (req, res) => {
 	res.render('auth/home')	
