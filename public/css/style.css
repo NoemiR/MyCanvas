@@ -7,6 +7,7 @@ body {
    max-width: 100vw;
    /*overflow: hidden;*/
    margin: 0px;
+   height: 100vh;
 
 }
 
@@ -132,12 +133,21 @@ h2 {
    justify-content: right;
 }
 
+
+
 .navbar a {
    color: white;
 }
 
 .other-stuff{
    display: flex;
+   /*height: 100%;*/
+}
+
+#right {
+   /*height: 100%;*/
+   height: 80vh;
+   width: 75vw;
 }
 
 .column {
@@ -148,7 +158,7 @@ h2 {
 }
 
 #left {
-   flex-shrink: 0;
+   /*flex-shrink: 0;*/
    width: 25vw;
    height: 100vh;
    background-color: rgba(0, 0, 0, 0.8);
@@ -177,6 +187,7 @@ h2 {
    display: flex;
    align-items: center;
    justify-content: center;
+   height: 100%;
 }
 
 /* Style the navbar */
@@ -190,7 +201,7 @@ h2 {
   float: left;
   display: block;
   color: #f2f2f2;
-  text-align: center;
+  /*text-align: center;*/
   justify-content: space-between;
   /*padding: 14px;*/
   text-decoration: none;
@@ -216,12 +227,37 @@ h2 {
 
 /*-------- styling user show page ------------*/
 .images {
+   padding: 5px;
+/*   display: -ms-flexbox;
+   -ms-flex-direction: column;
+   -ms-flex-wrap: wrap;*/
    display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   height: 100%;
+   /*align-items: flex-start;*/
+   align-content: flex-start;
+
 }
 
-.show-image {
-   max-width: 200px;
-   height: auto;
-   object-fit: scale-down;
+.show-image{
+   /*max-width: 23%;*/
+   flex: auto;
+   width: 200px;
+   margin-left: 5px;
+   margin-right: 5px;
+   margin-bottom: 5px;
+   margin-top: 5px;
+   /*height: auto;*/
+   /*object-fit: scale-down;*/
    border: 1px solid red;
+   transition: .8s opacity;
 }
+
+.show-image:hover{
+   opacity: 0.3;
+}
+
+/*.show-image:hover img:hover {
+   opacity: 1;
+}*/

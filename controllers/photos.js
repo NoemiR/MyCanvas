@@ -20,23 +20,28 @@ router.get('/new', (req, res, next) => {
 router.post('/', async (req, res, next) => {
 
 	try {
+		const foundUser = await Users.findOne({username: req.session.username});
+
+		const newPhoto = await Photos.create(req.body);
+		
+
 		// if the user is registered
 		if (req.session.logged === true) {
-			const foundUser = await Users.findOne({username: req.session.username});
-
-			const newPhoto = await Photos.create(req.body);
+			
 
 			// res.send(foundUser)
 
 
 			foundUser.photos.push(newPhoto);
 			foundUser.save();
-
-			const foundUserId = foundUser._id
+			const foundUserId = foundUser._id;
+			
 			//res.send(foundUser)
 			res.redirect('/users/' + foundUserId)
 		} else {
-			req.session.message = "You must be logged in 	to add a new photo. Please log in or 	create a new account"
+			// const foundUserId = foundUser._id;
+			// req.session.message = "You must be logged in 	to add a new photo. Please log in or 	create a new account"
+			// res.redirect('/users')
 			res.send("You must be logged in to add a new 	photo. Please log in or create a new 	account")
 		}
 	
