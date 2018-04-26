@@ -143,16 +143,6 @@ h2 {
    flex-direction: column;
 }
 
-.navbar {
-   width: 100%;
-   justify-content: right;
-}
-
-
-
-.navbar a {
-   color: white;
-}
 
 .other-stuff{
    display: flex;
@@ -176,14 +166,13 @@ h2 {
    /*flex-shrink: 0;*/
    width: 25vw;
    height: 100vh;
-   background-color: rgba(0, 0, 0, 0.8);
+   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .music {
    width: 300px;
    height: 420px;
-   background-color: darkgreen;
-   border: 1px solid green;
+   background-color: rgb(224, 255, 255);
 }
 
 p {
@@ -212,38 +201,19 @@ p {
 }
 
 /* Style the navbar */
-#navbar {
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
+.sticky-top {
+ /* overflow: hidden;*/
+ justify-content: space-between;
+ background-color: rgba(0, 0, 0, 0.5);
+ color: white;
+ margin-top: 2px;
 }
 
-/* Navbar links */
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  /*text-align: center;*/
-  justify-content: space-between;
-  /*padding: 14px;*/
-  text-decoration: none;
+.sticky-top a {
+	color: white;
 }
 
-/* Page content */
-.content {
-  padding: 16px;
-}
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
 
 
 /*-------- styling user show page ------------*/

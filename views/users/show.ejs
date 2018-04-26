@@ -1,7 +1,7 @@
-<body style="background-color: rgb(50, 50, 50);" class="show-page"> 
-	<div id="navbar">
-		<nav class="navbar" id="index">
-			
+<body style=" background-color: rgb(224, 255, 255);" class="show-page"> 
+	<div class="sticky-top">
+		<nav class="sticky-top">
+		
 				<ul class="list-inline-item">
 					<li class="list-inline-item">
 						<a class="btn btn-primary btn-sm" href="/auth/home" role="button">Home</a>
@@ -13,14 +13,14 @@
 						<a class="btn btn-primary btn-sm" href="/photos/new">Add Photos</a>
 					</li>
 					<li class="list-inline-item">
-						<a class="btn btn-primary btn-sm" href="/photos/edit">Edit Content</a>
+						<a class="btn btn-primary btn-sm" href="/photos/edit">Edit My Content</a>
 					</li>
 					<li class="list-inline-item">
-						<a class="btn btn-primary btn-sm" href="/users/<%= user.id%>/edit">Edit User Information</a>
+						<a class="btn btn-primary btn-sm" href="/users/<%= user.id%>/edit">Edit My Information</a>
 					</li>
 					<li class="list-inline-item">
 					<form action="/users/<%= user.id%>?_method=DELETE" method="POST">
-						<button class="btn btn-primary btn-sm">Delete User Account</button>
+						<button class="btn btn-primary btn-sm">Delete My Account</button>
 						</form>
 					</li>
 				</ul>	
