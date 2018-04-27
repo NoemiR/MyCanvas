@@ -42,6 +42,9 @@ const authController = require('./controllers/auth');
 app.use('/auth', authController)
 
 
+app.get('/', (req, res) => {
+	res.redirect('/auth/login')
+})
 
 app.get('/example', (req, res) => {
 	res.send(req.query)
