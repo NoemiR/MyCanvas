@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-console.log(process.env.DB_HOST, ' this is host stringf')
+console.log(process.env.MONGODB_URI, ' this is host stringf')
 const connectionString = process.env.DB_HOST;
 
 mongoose.connect(connectionString);
