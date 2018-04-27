@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb://localhost/myCanvas';
+console.log(process.env.DB_HOST, ' this is host stringf')
+const connectionString = process.env.DB_HOST;
 
 mongoose.connect(connectionString);
 
